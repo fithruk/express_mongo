@@ -1,0 +1,107 @@
+<div class="auth">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6"><a class="active" href="#login">Login</a></li>
+        <li class="tab col s6"><a href="#register">Registation</a></li>
+      </ul>
+    </div>
+    <div id="login" class="tab col s6 offset-s3">
+      <form action="/auth/login" method="POST">
+        <h1>Enter to the store</h1>
+
+        {{#if succes}}
+          <p class="msg">{{succes}}</p>
+        {{/if}}
+
+        {{#if userError}}
+          <p class="msg error">{{userError}}</p>
+        {{/if}}
+
+        {{#if passwordError}}
+          <p class="msg error">{{passwordError}}</p>
+        {{/if}}
+
+        {{#if loginError}}
+          <p class="msg error">{{loginError}}</p>
+        {{/if}}
+
+        <div class="input-field">
+          <input
+            id="email"
+            name="email"
+            type="email"
+            class="validate"
+            required
+          />
+          <label for="email">Email</label>
+          <span class="helper-text" data-error="Fill the field"></span>
+        </div>
+
+        <div class="input-field">
+          <input
+            id="password"
+            name="password"
+            type="password"
+            class="validate"
+            required
+          />
+          <a href="/auth/reset">Forgot password?</a>
+          <label for="password">Password</label>
+          <span class="helper-text" data-error="Fill the field"></span>
+        </div>
+
+        <button class="btn btn-primary">Login</button>
+      </form>
+    </div>
+    <div id="register" class="tab col s6 offset-s3">
+
+      <form action="/auth/register" method="POST">
+        <h1>Create account</h1>
+
+        <div class="input-field">
+          <input
+            id="remail"
+            name="remail"
+            type="email"
+            class="validate"
+            required
+          />
+          <label for="remail">Email</label>
+          <span class="helper-text" data-error="Fill the field"></span>
+        </div>
+
+        <div class="input-field">
+          <input id="name" name="name" type="text" class="validate" required />
+          <label for="name">Name</label>
+          <span class="helper-text" data-error="Fill the field"></span>
+        </div>
+
+        <div class="input-field">
+          <input
+            id="rpassword"
+            name="rpassword"
+            type="password"
+            class="validate"
+            required
+          />
+          <label for="rpassword">Password</label>
+          <span class="helper-text" data-error="Fill the field"></span>
+        </div>
+
+        <div class="input-field">
+          <input
+            id="confirm"
+            name="confirm"
+            type="password"
+            class="validate"
+            required
+          />
+          <label for="confirm">Password again</label>
+          <span class="helper-text" data-error="Fill the field"></span>
+        </div>
+        <button class="btn btn-primary">Registration</button>
+      </form>
+    </div>
+  </div>
+</div>

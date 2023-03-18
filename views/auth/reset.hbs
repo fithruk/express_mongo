@@ -1,0 +1,19 @@
+<div class="row">
+
+  <div id="login" class="tab col s6 offset-s3">
+    <form action="/auth/reset" method="POST">
+      <h1>Reset Password</h1>
+      {{#if accessError}}
+        <p class="msg error">{{accessError}}</p>
+      {{/if}}
+      <div class="input-field">
+        <input id="email" name="email" type="email" class="validate" required />
+        <label for="email">Email</label>
+        <span class="helper-text" data-error="Fill the field"></span>
+      </div>
+
+      <button class="btn btn-primary">reset</button>
+    </form>
+  </div>
+
+</div>
