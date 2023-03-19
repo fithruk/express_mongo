@@ -5,15 +5,15 @@ const exphbs = require("express-handlebars");
 const flash = require("connect-flash");
 const session = require("express-session");
 const MongoStore = require("connect-mongodb-session")(session);
-const homeRoutes = require("../routes/home");
-const cardRoutes = require("../routes/card");
-const addRoutes = require("../routes/add");
-const ordersRoutes = require("../routes/orders");
-const coursesRoutes = require("../routes/courses");
-const authRoutes = require("../routes/auth");
-const keys = require("../keys");
-const varMiddleware = require("../middleWares/variables");
-const userMidlleware = require("../middleWares/userMidlleware");
+const homeRoutes = require("./routes/home");
+const cardRoutes = require("./routes/card");
+const addRoutes = require("./routes/add");
+const ordersRoutes = require("./routes/orders");
+const coursesRoutes = require("./routes/courses");
+const authRoutes = require("./routes/auth");
+const keys = require("./keys");
+const varMiddleware = require("./middleWares/variables");
+const userMidlleware = require("./middleWares/userMidlleware");
 
 const app = express();
 
@@ -30,7 +30,7 @@ app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.set("views", "views");
 
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
