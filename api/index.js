@@ -45,7 +45,7 @@ app.use(flash());
 app.use(varMiddleware);
 app.use(userMidlleware);
 
-app.use("/", homeRoutes);
+app.use("/api", homeRoutes);
 app.use("/add", addRoutes);
 app.use("/courses", coursesRoutes);
 app.use("/card", cardRoutes);
